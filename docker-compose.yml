@@ -30,3 +30,16 @@ services:
       - ./frontend/src:/app/client/src
     links:
       - server
+
+########################
+# Setup robot container
+########################
+  robot:
+    build: 
+      context: ./robot
+    volumes:
+      - ./robot/tests:/app/robot/tests
+      - ./robot/results:/app/robot/results
+    links:
+      - server
+      - client
