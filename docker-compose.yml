@@ -1,0 +1,32 @@
+version: '3'
+
+services:
+
+########################
+# Setup node container
+########################
+  server:
+    build:
+      context: ./backend
+    expose:
+        - "9000"
+    ports:
+      - 9000:9000
+    volumes:
+      - ./backend/src:/app/server/src
+
+
+########################
+# Setup client container
+########################
+  client:
+    build: 
+      context: ./frontend
+    expose:
+      - "8000"
+    ports:
+      - 8000:8000
+    volumes:
+      - ./frontend/src:/app/client/src
+    links:
+      - server
