@@ -4,3 +4,6 @@ build:
     server: backend/Dockerfile
 release:
   image: web
+  image: server
+  command:
+    - echo 'Starting server after deployment!';
