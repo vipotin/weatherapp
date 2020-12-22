@@ -35,4 +35,4 @@ app.use(router.allowedMethods());
 
 app.listen(port);
 
-console.log(`App listening on port ${port} ${appId}`);
+console.log(`App listening on port ${port}`);
