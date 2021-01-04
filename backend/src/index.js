@@ -35,6 +35,9 @@ router.get('/api/weather', async ctx => {
 app.use(router.routes(),);
 app.use(router.allowedMethods(),);
 
-app.listen(port,);
+const server = app.listen(port,);
 
 console.log(`App listening on port ${port}`,);
+
+// Export our app for testing purposes
+module.exports = server;
