@@ -1,0 +1,10 @@
+{
+  "weather": [
+    {
+      "id": 600, 
+      "main": "Snow", 
+      "description": "light snow", 
+      "icon": "13d"
+    }
+  ]
+}
