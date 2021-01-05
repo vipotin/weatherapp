@@ -1,8 +1,12 @@
-FROM python:3
+FROM python:alpine
 
-RUN python3 -m pip install robotframework
-RUN mkdir -p /app/robot
+COPY requirements.txt /tmp/requirements.txt
+RUN pip install --upgrade pip
+RUN pip install -r /tmp/requirements.txt
+
 
 WORKDIR /app/robot
 
-CMD ["robot", "-d", "./results", "./tests/*.robot"]
+COPY tests /tests
+
+ENTRYPOINT [ "robot" ]
