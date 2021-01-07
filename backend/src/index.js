@@ -30,6 +30,13 @@ const fetchForecast = async () => {
   return response ? response.json() : {};
 };
 
+const fetchForecastByLocation = async (lon, lat,) => {
+  const endpoint = `${mapURI}/forecast?lat=${lat}&lon=${lon}&cnt=5&appid=${appId}`;
+  const response = await fetch(endpoint,);
+
+  return response ? response.json() : {};
+};
+
 // eslint-disable-next-line comma-dangle
 router.get('/api/weather', async ctx => {
   const weatherData = await fetchWeather();
@@ -51,6 +58,21 @@ router.get('/api/forecast', async ctx => {
     }
     : {};
   // ctx.body = weatherData.list ? weatherData.list : [];
+},);
+
+// eslint-disable-next-line comma-dangle
+router.get('/api/forecastbylocation', async ctx => {
+  if (ctx.request.query.lat && ctx.request.query.lon) {
+    const { lon, lat, } = ctx.request.query;
+    const weatherData = await fetchForecastByLocation(lon, lat,);
+    ctx.type = 'application/json; charset=utf-8';
+    ctx.body = weatherData
+      ? {
+        weatherData: weatherData.list,
+        city: weatherData.city.name,
+      }
+      : {};
+  }
 },);
 
 app.use(router.routes(),);
