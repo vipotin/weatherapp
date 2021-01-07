@@ -81,10 +81,10 @@ class Weather extends React.Component {
     console.log(icons, city);
 
     return (
-      <div>
-        <h2>{city}</h2>
+      <div className="container">
+        <h2>{`Weather in ${city}`}</h2>
         {error !== '' ? undefined : <p key={error}>{error}</p>}
-        <div>
+        <div className="weather-list">
           {icons.map((item) => (
             <div className="icon" key={item.id}>
               <img src={`/img/${item.icon}.svg`} alt="weather-icon" />
