@@ -43,13 +43,11 @@ router.get('/api/weather', async ctx => {
 
   ctx.type = 'application/json; charset=utf-8';
   ctx.body = weatherData.weather ? weatherData.weather[0] : {};
-  console.log(weatherData,);
 },);
 
 // eslint-disable-next-line comma-dangle
 router.get('/api/forecast', async ctx => {
   const weatherData = await fetchForecast();
-  console.log(weatherData,);
   ctx.type = 'application/json; charset=utf-8';
   ctx.body = weatherData
     ? {
@@ -57,7 +55,6 @@ router.get('/api/forecast', async ctx => {
       city: weatherData.city.name,
     }
     : {};
-  // ctx.body = weatherData.list ? weatherData.list : [];
 },);
 
 // eslint-disable-next-line comma-dangle
