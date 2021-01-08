@@ -1,10 +1,77 @@
 {
-  "weather": [
+  "cod": "200",
+  "message": 0,
+  "cnt": 5,
+  "list": [
     {
-      "id": 600, 
-      "main": "Snow", 
-      "description": "light snow", 
-      "icon": "13d"
+      "dt": 1610020800,
+      "weather": [
+        {
+          "id": 600, 
+          "main": "Snow", 
+          "description": "light snow", 
+          "icon": "13d"
+        }
+      ],
+      "dt_txt": "2021-01-07 12:00:00"
+    },
+    {
+      "dt": 1610031600,
+      "weather": [
+        {
+          "id": 600, 
+          "main": "Snow", 
+          "description": "light snow", 
+          "icon": "13d"
+        }
+      ],
+      "dt_txt": "2021-01-07 15:00:00"
+    },
+    {
+      "dt": 1610042400,
+      "weather": [
+        {
+          "id": 600, 
+          "main": "Snow", 
+          "description": "light snow", 
+          "icon": "13d"
+        }
+      ],
+      "dt_txt": "2021-01-07 18:00:00"
+    },
+    {
+      "dt": 1610053200,
+      "weather": [
+        {
+          "id": 600, 
+          "main": "Snow", 
+          "description": "light snow", 
+          "icon": "13d"
+        }
+      ],
+      "dt_txt": "2021-01-07 21:00:00"
+    },
+    {
+      "dt": 1610064000,
+      "weather": [
+        {
+          "id": 600, 
+          "main": "Snow", 
+          "description": "light snow", 
+          "icon": "13d"
+        }
+      ],
+      "dt_txt": "2021-01-08 00:00:00"
     }
-  ]
+  ],
+  "city": {
+    "id": 658225,
+    "name": "Helsinki",
+    "coord": { "lat": 60.1695, "lon": 24.9355 },
+    "country": "FI",
+    "population": 0,
+    "timezone": 7200,
+    "sunrise": 1610003969,
+    "sunset": 1610026392
+  }
 }
