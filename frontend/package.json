@@ -11,7 +11,7 @@
   "scripts": {
     "start": "node_modules/.bin/webpack-dev-server --config webpack.config.js --progress --inline --colors",
     "lint": "node_modules/.bin/eslint --ext .js --ext .jsx .",
-    "deploy": "cd ../ && git subtree push --prefix frontend heroku-client master"
+    "deploy": "cd ../ && git push heroku-client `git subtree split --prefix frontend`:master --force"
   },
   "dependencies": {
     "react": "^16.13.1",

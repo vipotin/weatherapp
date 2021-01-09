@@ -8,7 +8,7 @@
     "start": "node src/index.js",
     "dev": "DEBUG=weathermap ./node_modules/.bin/nodemon src/index.js",
     "lint": "eslint src/*.js",
-    "deploy": "cd ../ && git subtree push --prefix backend heroku-server master",
+    "deploy": "cd ../ && git push heroku-server `git subtree split --prefix backend`:master --force",
     "test": "mocha tests/*.js --exit"  
   },
   "dependencies": {
