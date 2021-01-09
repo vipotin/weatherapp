@@ -9,6 +9,7 @@ class Weather extends React.Component {
     this.state = {
       icons: [],
       city: '',
+      loading: true,
     };
   }
 
@@ -30,6 +31,7 @@ class Weather extends React.Component {
           error: '',
           icons: await getWeatherInfo(forecast),
           city: forecast.city,
+          loading: false,
         },
       );
     } else {
@@ -48,6 +50,7 @@ class Weather extends React.Component {
             error: '',
             icons: await getWeatherInfo(forecast),
             city: forecast.city,
+            loading: false,
           },
         );
       }
@@ -62,12 +65,12 @@ class Weather extends React.Component {
 
   render() {
     const {
-      icons, error, city,
+      icons, error, city, loading,
     } = this.state;
 
     return (
       <div className="container">
-        {city ? <h2>{`Weather in ${city}`}</h2> : <h2>Loading</h2>}
+        {loading ? <h2>Loading</h2> : <h2>{`Weather in ${city}`}</h2>}
         <div className="weather-list">
           {icons && icons.map((item) => (
             <div className="weather" key={item.id}>

@@ -41,7 +41,9 @@ export const getWeatherInfo = async (data) => {
   const list = [];
   data.weatherData.forEach((item) => {
     const icon = item.weather[0].icon.slice(0, -1);
-    const time = `${new Date(item.dt_txt).getHours()}.00`;
+    // Format date for Safari support
+    const date = new Date(item.dt_txt.replace(/\s/, 'T'));
+    const time = `${date.getHours()}.00`;
     const id = item.dt;
     list.push({ icon, time, id });
   });
