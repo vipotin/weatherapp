@@ -9,17 +9,20 @@ Instructions for running the app locally and in Docker and testing the app in Do
 
 * An [openweathermap](http://openweathermap.org/) API key.
 * [Docker](https://www.docker.com) and [Docker Compose](https://docs.docker.com/compose/) installed.
+* Download source files from this repository
 
 ### Running app
 
 #### Locally with npm
-You can run the app locally using `npm i && npm start`
+Start client (frontend) and server (backend) apps in different terminals using `npm i && npm start`
 
 #### In Docker
-You can set up frontend and backend services by running `docker-compose up client server`. Navigate to `localhost:8000` in a browser to interact with the app.
+You can run client and server by using `docker-compose up client server`. Navigate to `localhost:8000` in a browser to interact with the app.
 
 ### Testing app
-Robot Framework test are run in Chrome with `docker-compose up client data hub chrome` and `docker-compose run test-chrome`
+Robot Framework test are run in Chrome with `docker-compose up client data hub chrome` and `docker-compose run test-chrome` (in other terminal).
+
+You can stop all the containers with `docker-compose down`.
 
 ## Exercises
 
